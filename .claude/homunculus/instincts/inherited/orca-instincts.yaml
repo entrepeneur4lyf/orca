@@ -1,0 +1,557 @@
+# Instincts generated from https://github.com/entrepeneur4lyf/orca
+# Generated: 2026-03-25T20:52:17.891Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: orca-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Commit Length
+
+## Action
+
+Keep commit messages concise (~38 characters)
+
+## Evidence
+
+- Average commit message length: 38 chars
+- Based on 200 commits
+
+---
+id: orca-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: orca-import-alias
+trigger: "when importing modules"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Import Alias
+
+## Action
+
+Use path aliases (@/, ~/) instead of relative imports
+
+## Evidence
+
+- Import analysis shows alias pattern
+- Example: import { x } from '@/lib/x'
+
+---
+id: orca-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: orca-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: assets, components, lib, pages, stores
+
+---
+id: orca-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: orca-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: src/components/*, src/pages/*, src/stores/*
+
+---
+id: orca-workflow-bump-version-release
+trigger: "when doing bump version release"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Workflow Bump Version Release
+
+## Action
+
+Follow the bump-version-release workflow:
+1. Update version in package.json
+2. Update version in src-tauri/Cargo.toml
+3. Update src-tauri/Cargo.lock
+4. Update src-tauri/tauri.conf.json
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: package.json, src-tauri/Cargo.toml, src-tauri/Cargo.lock
+
+---
+id: orca-workflow-dependency-update-cargo-lock
+trigger: "when doing dependency update cargo lock"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Workflow Dependency Update Cargo Lock
+
+## Action
+
+Follow the dependency-update-cargo-lock workflow:
+1. Update dependency version in Cargo.toml (sometimes implicit via PR)
+2. Regenerate Cargo.lock
+3. Merge or commit the updated lockfile
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src-tauri/Cargo.lock
+
+---
+id: orca-workflow-feature-or-bugfix-ui-and-changelog
+trigger: "when doing feature or bugfix ui and changelog"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Workflow Feature Or Bugfix Ui And Changelog
+
+## Action
+
+Follow the feature-or-bugfix-ui-and-changelog workflow:
+1. Edit one or more src/components/*.tsx or src/pages/*.tsx files
+2. Update CHANGELOG.md with a description of the change
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: CHANGELOG.md, src/components/*.tsx, src/pages/*.tsx
+
+---
+id: orca-workflow-feature-or-bugfix-tauri-rust-and-ui
+trigger: "when doing feature or bugfix tauri rust and ui"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/entrepeneur4lyf/orca
+---
+
+# Orca Workflow Feature Or Bugfix Tauri Rust And Ui
+
+## Action
+
+Follow the feature-or-bugfix-tauri-rust-and-ui workflow:
+1. Edit src-tauri/src/*.rs (Rust backend logic)
+2. Edit src/components/*.tsx or src/pages/*.tsx (UI logic)
+3. Optionally update CHANGELOG.md
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: src-tauri/src/*.rs, src/components/*.tsx, src/pages/*.tsx
+
+---
+id: orca-instinct-file-naming-camelCase
+trigger: "When creating a new file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase (e.g., myComponent.tsx)
+
+## Evidence
+
+- Pattern in namingConventions.files
+- Observed in src/components/SettingsSheet.tsx
+
+---
+id: orca-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Function Naming CamelCase
+
+## Action
+
+Use camelCase for the function name
+
+## Evidence
+
+- Pattern in namingConventions.functions
+- Common in TypeScript codebases
+
+---
+id: orca-instinct-class-naming-PascalCase
+trigger: "When defining a new class"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Class Naming PascalCase
+
+## Action
+
+Use PascalCase for the class name
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: orca-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for the constant name
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: orca-instinct-import-alias-style
+trigger: "When importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Import Alias Style
+
+## Action
+
+Use alias import style where possible
+
+## Evidence
+
+- Pattern in importStyle: alias
+
+---
+id: orca-instinct-export-mixed-style
+trigger: "When exporting modules or functions"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Export Mixed Style
+
+## Action
+
+Use mixed export style (named and default exports as appropriate)
+
+## Evidence
+
+- Pattern in exportStyle: mixed
+
+---
+id: orca-instinct-try-catch-error-handling
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Try Catch Error Handling
+
+## Action
+
+Wrap error-prone logic in try-catch blocks
+
+## Evidence
+
+- Pattern in errorHandling.style: try-catch
+
+---
+id: orca-instinct-custom-error-classes
+trigger: "When defining custom errors"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Custom Error Classes
+
+## Action
+
+Create custom error classes for specific error types
+
+## Evidence
+
+- Pattern in errorHandling.customErrorClasses: true
+
+---
+id: orca-instinct-test-location-separate
+trigger: "When adding tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Test Location Separate
+
+## Action
+
+Place tests in a separate test directory, not alongside source files
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+
+---
+id: orca-instinct-feature-test-after-implementation
+trigger: "When implementing a new feature"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Feature Test After Implementation
+
+## Action
+
+Add tests for the feature immediately after implementation
+
+## Evidence
+
+- Observed in feature-development workflow: 'Add tests for feature' follows 'Add feature implementation'
+
+---
+id: orca-instinct-commit-message-freeform
+trigger: "When writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Commit Message Freeform
+
+## Action
+
+Use a freeform commit message style without strict prefixes
+
+## Evidence
+
+- Pattern in commits.type: freeform
+- Examples: 'Fix missing vibrancy effect on folder windows', 'Detect and report nested git repositories on add'
+
+---
+id: orca-instinct-commit-message-short
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Commit Message Short
+
+## Action
+
+Keep the commit message concise (average length ~38 characters)
+
+## Evidence
+
+- Pattern in commits.averageLength: 38
+
+---
+id: orca-instinct-bump-version-release
+trigger: "When releasing a new version of the app"
+confidence: 0.99
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Bump Version Release
+
+## Action
+
+Update version in package.json, src-tauri/Cargo.toml, src-tauri/Cargo.lock, and src-tauri/tauri.conf.json
+
+## Evidence
+
+- Workflow: bump-version-release
+- Example commits: 'Update version in package.json', etc.
+
+---
+id: orca-instinct-dependency-update-cargo-lock
+trigger: "When upgrading a Rust crate dependency"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Dependency Update Cargo Lock
+
+## Action
+
+Update dependency version in Cargo.toml, regenerate Cargo.lock, and commit the updated lockfile
+
+## Evidence
+
+- Workflow: dependency-update-cargo-lock
+- Example: 'Merge pull request #27 from SoFriendly/dependabot/cargo/src-tauri/tar-0.4.45'
+
+---
+id: orca-instinct-feature-or-bugfix-ui-and-changelog
+trigger: "When adding a new UI feature or fixing a UI bug"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Feature Or Bugfix Ui And Changelog
+
+## Action
+
+Edit src/components/*.tsx or src/pages/*.tsx, then update CHANGELOG.md with a description of the change
+
+## Evidence
+
+- Workflow: feature-or-bugfix-ui-and-changelog
+- Example: 'Fix missing vibrancy effect on folder windows' + CHANGELOG.md update
+
+---
+id: orca-instinct-feature-or-bugfix-tauri-rust-and-ui
+trigger: "When adding or fixing a feature that spans both Tauri backend and React frontend"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: entrepeneur4lyf/orca
+---
+
+# Orca Instinct Feature Or Bugfix Tauri Rust And Ui
+
+## Action
+
+Edit src-tauri/src/*.rs for backend logic, edit src/components/*.tsx or src/pages/*.tsx for UI, and optionally update CHANGELOG.md
+
+## Evidence
+
+- Workflow: feature-or-bugfix-tauri-rust-and-ui
+- Example: 'Handle merge commits using CLI git command' (Rust) + UI changes
+
